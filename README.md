@@ -22,15 +22,23 @@ Instead of relying entirely on AI-generated answers, the application retrieves p
 
 ## Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| Next.js | Application framework and API routes |
-| React | Chat interface |
-| TypeScript | Application logic and type safety |
-| Google Gemini API | AI-generated customer support responses |
-| Google Sheets API | Product and order retrieval, refund ticket storage |
-| Tailwind CSS | User interface styling |
-| Node.js | Server-side execution |
+### Frontend
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+
+### AI
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
+
+### Database & Integration
+![Google Sheets](https://img.shields.io/badge/Google_Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white)
+![Google APIs](https://img.shields.io/badge/Google_APIs-4285F4?style=for-the-badge&logo=google&logoColor=white)
+
+### Tools
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ## How It Works
 
@@ -168,26 +176,18 @@ Try asking the chatbot:
 - "What is your return policy?"
 - "I want a refund for ORD-1002 because the item doesn't fit."
 
-Refund requests are recorded as **Pending** tickets. Creating a ticket does not mean that a refund has been approved.
-
-## Security Notes
-
-- Keep API keys and service account credentials out of source control.
-- Restrict access to the Google Spreadsheet and service account.
-- Do not expose server-side credentials in client-side code.
-- Use environment variables for sensitive configuration.
+Refund requests are recorded as **Pending** tickets so that a human support agent can review the request and decide whether the refund should be approved. Creating a ticket does not mean that a refund has been approved.
 
 ## Current Scope
 
 This project demonstrates AI-assisted customer support, spreadsheet-based data retrieval, and refund ticket creation.
 
-Automated refund confirmation emails and general interaction logging are not included in the current implementation. Refund tickets are recorded as pending requests rather than automatically approved refunds.
+Refund tickets are recorded as pending requests rather than automatically approved refunds.
 
 ## Future Improvements
 
 - Add customer interaction logging and support analytics.
 - Improve refund eligibility evaluation using additional order and delivery data.
-- Add authentication and customer-specific order access.
 - Add automated email notifications for approved refunds.
 
 ---
