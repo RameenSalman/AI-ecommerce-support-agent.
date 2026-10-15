@@ -1,0 +1,40 @@
+STORE POLICY
+
+Return Policy
+
+* Customers can request a return within 7 days of receiving their order.
+* Items must be unused, unwashed, and in their original condition.
+* Items should have their original tags attached.
+* Items that have been worn, washed, or damaged by the customer may not be eligible for a return.
+
+Refund Policy
+
+* Customers can request a refund for eligible returned items.
+* Refunds are processed after the returned item is received and inspected.
+* Refund processing may take 5-7 business days after approval.
+* Shipping charges are non-refundable unless the wrong or damaged item was sent.
+
+Exchange Policy
+
+* Customers can request an exchange within 7 days of delivery.
+* Exchanges are subject to product availability.
+* The item must be unused and in its original condition.
+
+Shipping Policy
+
+* Orders are usually delivered within 3-5 business days.
+* Delivery times may vary depending on the customer's location.
+* Customers can ask the AI assistant to check the status of their order using their Order ID.
+
+Order Support
+
+* Customers can provide their Order ID to check order details and status.
+* If an Order ID cannot be found, the customer will be informed that the order could not be located.
+* Customers can request a refund through the AI support assistant by providing their Order ID and reason for the refund.
+
+Customer Support
+
+* The AI support assistant can answer questions about store policies.
+* The AI assistant can look up orders using the Order ID.
+* The AI assistant can create a refund ticket when a customer requests a refund.
+* If the required information is unavailable, the AI assistant should clearly tell the customer rather than making up an answer.
