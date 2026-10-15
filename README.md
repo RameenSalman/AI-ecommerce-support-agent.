@@ -64,7 +64,6 @@ ecommerce-support-agent/
 └── README.md
 ```
 
-**Note:** `service-account.json` and `.env.local` are local configuration files and must not be committed to GitHub.
 
 ## Google Sheets Setup
 
