@@ -199,22 +199,34 @@ export async function POST(request: Request) {
             lookupProducts(),
         ]);
 
-        // Detect refund requests in the current or recent conversation.
+        // Distinguish policy questions from actual refund requests.
+        const isPolicyQuestion =
+            /\b(policy|policies|how many days|within how long|when can i return|what is your|what's your|can you explain|can you guide me|return period|refund period)\b/i.test(
+                userMessage
+            ) &&
+            /\b(refund|return|policy|policies|days|guide|explain)\b/i.test(
+                userMessage
+            );
+
         const refundPattern =
-            /\b(refund|money back|return my money)\b/i;
+            /\b(i want a refund|i'd like a refund|i would like a refund|request a refund|process my refund|money back|return my money|return this item|return my item)\b/i;
 
-        const isRefundRequest = refundPattern.test(userMessage);
+        const isRefundRequest =
+            !isPolicyQuestion && refundPattern.test(userMessage);
 
-        const previousRefundMessage = [...recentHistory]
-            .reverse()
-            .find(
-                (item) =>
-                    item.role === "user" &&
-                    refundPattern.test(item.content)
-            )?.content;
+        const previousRefundMessage = isRefundRequest
+            ? undefined
+            : [...recentHistory]
+                .reverse()
+                .find(
+                    (item) =>
+                        item.role === "user" &&
+                        refundPattern.test(item.content)
+                )?.content;
 
         const isRefundFlow =
-            isRefundRequest || Boolean(previousRefundMessage);
+            !isPolicyQuestion &&
+            (isRefundRequest || Boolean(previousRefundMessage));
 
         const effectiveMessage = previousRefundMessage
             ? `${previousRefundMessage}\n${userMessage}`
@@ -304,7 +316,7 @@ Do not disclose stored customer information unnecessarily.
         const ai = new GoogleGenAI({ apiKey });
 
         const response = await ai.models.generateContent({
-            model: "gemini-3.6-flash",
+            model: "gemini-3.5-flash-lite",
             contents,
             config: {
                 systemInstruction: `${prompt}
